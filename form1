@@ -1,0 +1,1095 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace BetterLightsOut
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+
+        Color pink = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(100)))), ((int)(((byte)(250)))));
+        bool singleLight = true; 
+        int numOfClicks = 0;
+        int[,] buttonStates = {{ 0, 0, 0, 0, 0 },
+                               { 0, 0, 0, 0, 0 },
+                               { 0, 0, 0, 0, 0 },
+                               { 0, 0, 0, 0, 0 },
+                               { 0, 0, 0, 0, 0 }};
+
+        //---------------------Row One---------------------------//
+
+        private void btnOneOne_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchOneOne();
+            }
+            else
+            {
+                switchOneOne();
+                switchOneTwo();
+
+                switchTwoOne();
+
+                eachLightClick();
+            }
+        }
+
+        private void btnOneTwo_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchOneTwo();
+            }
+            else
+            {
+                switchOneOne();
+                switchOneTwo();
+                switchOneThree();
+
+                switchTwoTwo();
+
+                eachLightClick();
+            }
+        }
+
+        private void btnOneThree_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchOneThree();
+            }
+            else
+            {
+                switchOneTwo();
+                switchOneThree();
+                switchOneFour();
+
+                switchTwoThree();
+
+                eachLightClick();
+            }
+        }
+
+        private void btnOneFour_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchOneFour();
+            }
+            else
+            {
+                switchOneThree();
+                switchOneFour();
+                switchOneFive();
+
+                switchTwoFour();
+
+                eachLightClick();
+            }
+        }
+
+        private void btnOneFive_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchOneFive();
+            }
+            else
+            {
+                switchOneFour();
+                switchOneFive();
+
+                switchTwoFive();
+
+                eachLightClick();
+            }
+        }
+
+        //---------------------Row Two---------------------------//
+
+        private void btnTwoOne_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchTwoOne();
+            }
+            else
+            {
+                switchOneOne();
+
+                switchTwoOne();
+                switchTwoTwo();
+
+                switchThreeOne();
+
+                eachLightClick();
+            }
+        }
+
+        private void btnTwoTwo_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchTwoTwo();
+            }
+            else
+            {
+                switchOneTwo();
+
+                switchTwoOne();
+                switchTwoTwo();
+                switchTwoThree();
+
+                switchThreeTwo();
+
+                eachLightClick();
+            }
+        }
+
+        private void btnTwoThree_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchTwoThree();
+            }
+            else
+            {
+                switchOneThree();
+
+                switchTwoTwo();
+                switchTwoThree();
+                switchTwoFour();
+
+                switchThreeThree();
+
+                eachLightClick();
+            }
+        }
+
+        private void btnTwoFour_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchTwoFour();
+            }
+            else
+            {
+                switchOneFour();
+
+                switchTwoThree();
+                switchTwoFour();
+                switchTwoFive();
+
+                switchThreeFour();
+
+                eachLightClick();
+            }
+        }
+
+        private void btnTwoFive_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchTwoFive();
+            }
+            else
+            {
+                switchOneFive();
+
+                switchTwoFour();
+                switchTwoFive();
+
+                switchThreeFive();
+
+                eachLightClick();
+            }
+        }
+
+        //-----------------------Row Three------------------------//
+
+        private void btnThreeOne_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchThreeOne();
+            }
+            else
+            {
+                switchTwoOne();
+
+                switchThreeOne();
+                switchThreeTwo();
+
+                switchFourOne();
+
+                eachLightClick();
+            }
+        }
+
+        private void btnThreeTwo_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchThreeTwo();
+            }
+            else
+            {
+                switchTwoTwo();
+
+                switchThreeOne();
+                switchThreeTwo();
+                switchThreeThree();
+
+                switchFourTwo();
+
+                eachLightClick();
+            }
+        }
+
+        private void btnThreeThree_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchThreeThree();
+            }
+            else
+            {
+                switchTwoThree();
+
+                switchThreeTwo();
+                switchThreeThree();
+                switchThreeFour();
+
+                switchFourThree();
+
+                eachLightClick();
+            }
+        }
+
+        private void btnThreeFour_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchThreeFour();
+            }
+            else
+            {
+                switchTwoFour();
+
+                switchThreeThree();
+                switchThreeFour();
+                switchThreeFive();
+
+                switchFourFour();
+
+                eachLightClick();
+            }
+        }
+
+        private void btnThreeFive_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchThreeFive();
+            }
+            else
+            {
+                switchTwoFive();
+
+                switchThreeFour();
+                switchThreeFive();
+
+                switchFourFive();
+
+                eachLightClick();
+            }
+        }
+
+        //---------------------Row Four---------------------------//
+
+        private void btnFourOne_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchFourOne();
+            }
+            else
+            {
+                switchThreeOne();
+
+                switchFourOne();
+                switchFourTwo();
+
+                switchFiveOne();
+
+                eachLightClick();
+            }
+        }
+
+        private void btnFourTwo_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchFourTwo();
+            }
+            else
+            {
+                switchThreeTwo();
+
+                switchFourOne();
+                switchFourTwo();
+                switchFourThree();
+
+                switchFiveTwo();
+
+                eachLightClick();
+            }
+        }
+
+        private void btnFourThree_Click(object sender, EventArgs e)
+        {
+
+            if (singleLight)
+            {
+                switchFourThree();
+            }
+            else
+            {
+                switchThreeThree();
+
+                switchFourTwo();
+                switchFourThree();
+                switchFourFour();
+
+                switchFiveThree();
+
+                eachLightClick();
+            }
+        }
+
+        private void btnFourFour_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchFourFour();
+            }
+            else
+            {
+                switchThreeFour();
+
+                switchFourThree();
+                switchFourFour();
+                switchFourFive();
+
+                switchFiveFour();
+
+                eachLightClick();
+            }
+        }
+
+        private void btnFourFive_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchFourFive();
+            }
+            else
+            {
+                switchThreeFive();
+
+                switchFourFour();
+                switchFourFive();
+
+                switchFiveFive();
+
+                eachLightClick();
+            }
+        }
+
+        //---------------------Row Five--------------------------//
+
+        private void btnFiveOne_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchFiveOne();
+            }
+            else
+            {
+                switchFourOne();
+
+                switchFiveOne();
+                switchFiveTwo();
+
+                eachLightClick();
+            }
+        }
+
+        private void btnFiveTwo_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchFiveTwo();
+            }
+            else
+            {
+                switchFourTwo();
+
+                switchFiveOne();
+                switchFiveTwo();
+                switchFiveThree();
+
+                eachLightClick();
+            }
+        }
+
+        private void btnFiveThree_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchFiveThree();
+            }
+            else
+            {
+                switchFourThree();
+
+                switchFiveTwo();
+                switchFiveThree();
+                switchFiveFour();
+
+                eachLightClick();
+            }
+        }
+
+        private void btnFiveFour_Click(object sender, EventArgs e)
+        {
+            if (singleLight)
+            {
+                switchFiveFour();
+            }
+            else
+            {
+                switchFourFour();
+
+                switchFiveThree();
+                switchFiveFour();
+                switchFiveFive();
+
+                eachLightClick();
+            }
+        }
+
+        private void btnFiveFive_Click(object sender, EventArgs e)
+        {
+            if( singleLight )
+            {
+                switchFiveFive();
+            }
+            else
+            {
+                switchFourFive();
+
+                switchFiveFour();
+                switchFiveFive();
+
+                eachLightClick();
+            }
+        }
+
+        private void btnState_Click(object sender, EventArgs e)
+        {
+            singleLight = false;
+            btnState.Enabled = false;
+        }
+
+        private void btnRandom_Click(object sender, EventArgs e)
+        {
+            int row = 0;
+            int column = 0;
+            Random rand = new Random();
+            string[] points = {"00", "00", "00", "00", "00", ""};
+            string pointAsString = "";
+
+            singleLight = false;
+            btnState.Enabled = false;
+            clearTable();
+            numOfClicks = 0;
+            lblClicks.Text = "Clicks: " + numOfClicks;
+            
+            for (int i = 0; i < 5; i++)
+            {            
+                while (true)
+                {
+                    if (points.Contains(pointAsString))
+                    {
+                        row = getRandom(rand);
+                        column = getRandom(rand);
+
+                        pointAsString = row.ToString() + column.ToString();
+                    }
+                    else break;
+                }
+                
+                points[i] = pointAsString;
+                
+                switch (column)
+                {
+                    case 1:
+                        switch (row)
+                        {
+                            case 1:
+                                switchOneOne();
+                                break;
+                            case 2:
+                                switchOneTwo();
+                                break;
+                            case 3:
+                                switchOneThree();
+                                break;
+                            case 4:
+                                switchOneFour();
+                                break;
+                            case 5:
+                                switchOneFive();
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 2:
+                        switch (row)
+                        {
+                            case 1:
+                                switchTwoOne();
+                                break;
+                            case 2:
+                                switchTwoTwo();
+                                break;
+                            case 3:
+                                switchTwoThree();
+                                break;
+                            case 4:
+                                switchTwoFour();
+                                break;
+                            case 5:
+                                switchTwoFive();
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 3:
+                        switch (row)
+                        {
+                            case 1:
+                                switchThreeOne();
+                                break;
+                            case 2:
+                                switchThreeTwo();
+                                break;
+                            case 3:
+                                switchThreeThree();
+                                break;
+                            case 4:
+                                switchThreeFour();
+                                break;
+                            case 5:
+                                switchThreeFive();
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 4:
+                        switch (row)
+                        {
+                            case 1:
+                                switchFourOne();
+                                break;
+                            case 2:
+                                switchFourTwo();
+                                break;
+                            case 3:
+                                switchFourThree();
+                                break;
+                            case 4:
+                                switchFourFour();
+                                break;
+                            case 5:
+                                switchFourFive();
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 5:
+                        switch (row)
+                        {
+                            case 1:
+                                switchFiveOne();
+                                break;
+                            case 2:
+                                switchFiveTwo();
+                                break;
+                            case 3:
+                                switchFiveThree();
+                                break;
+                            case 4:
+                                switchFiveFour();
+                                break;
+                            case 5:
+                                switchFiveFive();
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+        }
+
+        //------------------------------------------------------------------------------------------------------------------------------------
+
+        /**********************
+        *******ROW ONE********
+        **********************/
+
+        private void switchOneOne()
+        {
+            if (buttonStates[0,0] == 0)
+            {
+                btnOneOne.BackColor = pink;
+                buttonStates[0, 0] = 1;
+            }
+            else
+            {
+                btnOneOne.BackColor = Color.White;
+                buttonStates[0, 0] = 0;
+            }
+        }
+
+        private void switchOneTwo()
+        {
+            if (buttonStates[0, 1] == 0)
+            {
+                btnOneTwo.BackColor = pink;
+                buttonStates[0, 1] = 1;
+            }
+            else
+            {
+                btnOneTwo.BackColor = Color.White;
+                buttonStates[0, 1] = 0;
+            }
+        }
+
+        private void switchOneThree()
+        {
+            if (buttonStates[0, 2] == 0)
+            {
+                btnOneThree.BackColor = pink;
+                buttonStates[0, 2] = 1;
+            }
+            else
+            {
+                btnOneThree.BackColor = Color.White;
+                buttonStates[0, 2] = 0;
+            }
+        }
+
+        private void switchOneFour()
+        {
+            if (buttonStates[0, 3] == 0)
+            {
+                btnOneFour.BackColor = pink;
+                buttonStates[0, 3] = 1;
+            }
+            else
+            {
+                btnOneFour.BackColor = Color.White;
+                buttonStates[0, 3] = 0;
+            }
+        }
+
+        private void switchOneFive()
+        {
+            if (buttonStates[0, 4] == 0)
+            {
+                btnOneFive.BackColor = pink;
+                buttonStates[0, 4] = 1;
+            }
+            else
+            {
+                btnOneFive.BackColor = Color.White;
+                buttonStates[0, 4] = 0;
+            }
+        }
+
+        /**********************
+         *******ROW TWO********
+         **********************/
+
+        private void switchTwoOne()
+        {
+            if (buttonStates[1, 0] == 0)
+            {
+                btnTwoOne.BackColor = pink;
+                buttonStates[1, 0] = 1;
+            }
+            else
+            {
+                btnTwoOne.BackColor = Color.White;
+                buttonStates[1, 0] = 0;
+            }
+        }
+
+        private void switchTwoTwo()
+        {
+            if (buttonStates[1, 1] == 0)
+            {
+                btnTwoTwo.BackColor = pink;
+                buttonStates[1, 1] = 1;
+            }
+            else
+            {
+                btnTwoTwo.BackColor = Color.White;
+                buttonStates[1, 1] = 0;
+            }
+        }
+
+        private void switchTwoThree()
+        {
+            if (buttonStates[1, 2] == 0)
+            {
+                btnTwoThree.BackColor = pink;
+                buttonStates[1, 2]= 1;
+            }
+            else
+            {
+                btnTwoThree.BackColor = Color.White;
+                buttonStates[1, 2] = 0;
+            }
+        }
+
+        private void switchTwoFour()
+        {
+            if (buttonStates[1, 3] == 0)
+            {
+                btnTwoFour.BackColor = pink;
+                buttonStates[1, 3] = 1;
+            }
+            else
+            {
+                btnTwoFour.BackColor = Color.White;
+                buttonStates[1, 3] = 0;
+            }
+        }
+
+        private void switchTwoFive()
+        {
+            if (buttonStates[1, 4] == 0)
+            {
+                btnTwoFive.BackColor = pink;
+                buttonStates[1, 4] = 1;
+            }
+            else
+            {
+                btnTwoFive.BackColor = Color.White;
+                buttonStates[1, 4] = 0;
+            }
+        }
+
+        /**********************
+         ******ROW THREE*******
+         **********************/
+
+        private void switchThreeOne()
+        {
+            if (buttonStates[2,0] == 0)
+            {
+                btnThreeOne.BackColor = pink;
+                buttonStates[2,0] = 1;
+            }
+            else
+            {
+                btnThreeOne.BackColor = Color.White;
+                buttonStates[2,0] = 0;
+            }
+        }
+
+        private void switchThreeTwo()
+        {
+            if (buttonStates[2,1] == 0)
+            {
+                btnThreeTwo.BackColor = pink;
+                buttonStates[2,1] = 1;
+            }
+            else
+            {
+                btnThreeTwo.BackColor = Color.White;
+                buttonStates[2,1] = 0;
+            }
+        }
+
+        private void switchThreeThree()
+        {
+            if (buttonStates[2,2] == 0)
+            {
+                btnThreeThree.BackColor = pink;
+                buttonStates[2,2] = 1;
+            }
+            else
+            {
+                btnThreeThree.BackColor = Color.White;
+                buttonStates[2,2] = 0;
+            }
+        }
+
+        private void switchThreeFour()
+        {
+            if (buttonStates[2,3] == 0)
+            {
+                btnThreeFour.BackColor = pink;
+                buttonStates[2,3] = 1;
+            }
+            else
+            {
+                btnThreeFour.BackColor = Color.White;
+                buttonStates[2,3] = 0;
+            }
+        }
+
+        private void switchThreeFive()
+        {
+            if (buttonStates[2,4] == 0)
+            {
+                btnThreeFive.BackColor = pink;
+                buttonStates[2,4] = 1;
+            }
+            else
+            {
+                btnThreeFive.BackColor = Color.White;
+                buttonStates[2,4] = 0;
+            }
+        }
+
+        /**********************
+         *******ROW FOUR*******
+         **********************/
+
+        private void switchFourOne()
+        {
+            if (buttonStates[3,0] == 0)
+            {
+                btnFourOne.BackColor = pink;
+                buttonStates[3,0] = 1;
+            }
+            else
+            {
+                btnFourOne.BackColor = Color.White;
+                buttonStates[3,0] = 0;
+            }
+        }
+
+        private void switchFourTwo()
+        {
+            if (buttonStates[3,1] == 0)
+            {
+                btnFourTwo.BackColor = pink;
+                buttonStates[3,1] = 1;
+            }
+            else
+            {
+                btnFourTwo.BackColor = Color.White;
+                buttonStates[3,1] = 0;
+            }
+        }
+
+        private void switchFourThree()
+        {
+            if (buttonStates[3,2] == 0 )
+            {
+                btnFourThree.BackColor = pink;
+                buttonStates[3,2] = 1;
+            }
+            else
+            {
+                btnFourThree.BackColor = Color.White;
+                buttonStates[3,2] = 0;
+            }
+        }
+
+        private void switchFourFour()
+        {
+            if (buttonStates[3,3] == 0)
+            {
+                btnFourFour.BackColor = pink;
+                buttonStates[3,3] = 1;
+            }
+            else
+            {
+                btnFourFour.BackColor = Color.White;
+                buttonStates[3,3] = 0;
+            }
+        }
+
+        private void switchFourFive()
+        {
+            if (buttonStates[3,4] == 0)
+            {
+                btnFourFive.BackColor = pink;
+                buttonStates[3,4] = 1;
+            }
+            else
+            {
+                btnFourFive.BackColor = Color.White;
+                buttonStates[3,4] = 0;
+            }
+        }
+
+        /**********************
+         *******ROW FIVE*******
+         **********************/
+
+        private void switchFiveOne()
+        {
+            if (buttonStates[4,0] == 0)
+            {
+                btnFiveOne.BackColor = pink;
+                buttonStates[4,0] = 1;
+            }
+            else
+            {
+                btnFiveOne.BackColor = Color.White;
+                buttonStates[4,0] = 0;
+            }
+        }
+
+        private void switchFiveTwo()
+        {
+            if (buttonStates[4,1] == 0)
+            {
+                btnFiveTwo.BackColor = pink;
+                buttonStates[4,1] = 1;
+            }
+            else
+            {
+                btnFiveTwo.BackColor = Color.White;
+                buttonStates[4,1] = 0;
+            }
+        }
+
+        private void switchFiveThree()
+        {
+            if (buttonStates[4,2] == 0)
+            {
+                btnFiveThree.BackColor = pink;
+                buttonStates[4,2] = 1;
+            }
+            else
+            {
+                btnFiveThree.BackColor = Color.White;
+                buttonStates[4,2] = 0;
+            }
+        }
+
+        private void switchFiveFour()
+        {
+            if (buttonStates[4,3] == 0)
+            {
+                btnFiveFour.BackColor = pink;
+                buttonStates[4,3] = 1;
+            }
+            else
+            {
+                btnFiveFour.BackColor = Color.White;
+                buttonStates[4,3] = 0;
+            }
+        }
+
+        private void switchFiveFive()
+        {
+            if (buttonStates[4,4] == 0)
+            {
+                btnFiveFive.BackColor = pink;
+                buttonStates[4,4] = 1;
+            }
+            else
+            {
+                btnFiveFive.BackColor = Color.White;
+                buttonStates[4,4] = 0;
+            }
+        }
+
+        //----------Other Functions---------------------------------------------------------------------
+
+        private void checkIfWon()
+        {
+            if ( buttonStates[0, 0] == 0 && buttonStates[0, 1] == 0 && buttonStates[0, 2] == 0 && buttonStates[0, 3] == 0 && buttonStates[0, 4] == 0 &&
+                 buttonStates[1, 0] == 0 && buttonStates[1, 1] == 0 && buttonStates[1, 2] == 0 && buttonStates[1, 3] == 0 && buttonStates[1, 4] == 0 &&
+                 buttonStates[2, 0] == 0 && buttonStates[2, 1] == 0 && buttonStates[2, 2] == 0 && buttonStates[2, 3] == 0 && buttonStates[2, 4] == 0 &&
+                 buttonStates[3, 0] == 0 && buttonStates[3, 1] == 0 && buttonStates[3, 2] == 0 && buttonStates[3, 3] == 0 && buttonStates[3, 4] == 0 &&
+                 buttonStates[4, 0] == 0 && buttonStates[4, 1] == 0 && buttonStates[4, 2] == 0 && buttonStates[4, 3] == 0 && buttonStates[4, 4] == 0 )
+            {
+                MessageBox.Show("You Won in " + numOfClicks + " moves!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clearTable();
+                singleLight = true;
+                btnState.Enabled = true;
+                numOfClicks = 0;
+                lblClicks.Text = "Clicks: " + numOfClicks;
+            }
+        }
+
+        private static int getRandom(Random rand)
+        {
+            int number = rand.Next(1, 6);
+            return number;
+        }
+
+        private void eachLightClick()
+        {
+            checkIfWon();
+
+            numOfClicks++;
+            lblClicks.Text = "Clicks: " + numOfClicks;
+        }
+
+        private void clearTable()
+        {
+            buttonStates[0, 0] = 1; buttonStates[0, 1] = 1; buttonStates[0, 2] = 1; buttonStates[0, 3] = 1; buttonStates[0, 4] = 1;
+            buttonStates[1, 0] = 1; buttonStates[1, 1] = 1; buttonStates[1, 2] = 1; buttonStates[1, 3] = 1; buttonStates[1, 4] = 1;
+            buttonStates[2, 0] = 1; buttonStates[2, 1] = 1; buttonStates[2, 2] = 1; buttonStates[2, 3] = 1; buttonStates[2, 4] = 1;
+            buttonStates[3, 0] = 1; buttonStates[3, 1] = 1; buttonStates[3, 2] = 1; buttonStates[3, 3] = 1; buttonStates[3, 4] = 1;
+            buttonStates[4, 0] = 1; buttonStates[4, 1] = 1; buttonStates[4, 2] = 1; buttonStates[4, 3] = 1; buttonStates[4, 4] = 1;
+
+            switchOneOne();   switchOneTwo();   switchOneThree();   switchOneFour();   switchOneFive();
+            switchTwoOne();   switchTwoTwo();   switchTwoThree();   switchTwoFour();   switchTwoFive();
+            switchThreeOne(); switchThreeTwo(); switchThreeThree(); switchThreeFour(); switchThreeFive();
+            switchFourOne();  switchFourTwo();  switchFourThree();  switchFourFour();  switchFourFive();
+            switchFiveOne();  switchFiveTwo();  switchFiveThree();  switchFiveFour();  switchFiveFive();
+        }
+
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            clearTable();
+            singleLight = true;
+            btnState.Enabled = true;
+            numOfClicks = 0;
+            lblClicks.Text = "Clicks: " + numOfClicks;
+        }
+    }
+}
